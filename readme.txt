@@ -1,9 +1,9 @@
 === OpenTickets Community Edition ===
-Contributors: quadshot, loushou, camu
+Contributors: quadshot, loushou, coolmann
 Donate link: http://opentickets.com/
 Tags: events, event management, tickets, ticket sales, ecommerce
 Requires at least: 3.6.1
-Tested up to: 4.0
+Tested up to: 3.9.2
 Stable tag: trunk
 Copyright: Copyright (C) 2009-2014 Quadshot Software LLC
 License: GNU General Public License, version 3 (GPL-3.0)
@@ -123,6 +123,29 @@ Setup an 'Event':
 9. Click the blue 'Publish' button in the upper right metabox
 
 == Changelog ==
+
+= 1.3.2 =
+* removed more php notices
+* changed the 'inifinite login' feature, so that it works with 4.0 and does not prevent 4.0 from handling sessions properly
+* added plugin icons
+
+= 1.3.1 =
+* removed 'web interfaces' from included packages, for wp.org compliance
+* changed how frontend ajax is handled
+* repairing seating report for recent changes
+
+= 1.3.0 =
+* corrected more php notices
+* changed how the order details metabox is overtaken, to preserve WC methodology
+* fixed edge case with zoner entry removal
+* fixed ticket display area name issue
+
+= 1.2.7 =
+* removed deprecated user query filtering
+* corrected php notice issues
+
+= 1.2.6 =
+* ticket permalinks automatically work on installation now
 
 = 1.2.5 =
 * initial public release
