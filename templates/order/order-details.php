@@ -52,7 +52,7 @@ $order = new WC_Order( $order_id );
 
 							echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times; %s', $item['qty'] ) . '</strong>', $item );
 
-							// OpenTickets!!!! add ticket information
+							//@@@@LOUSHOU - OpenTickets!!!! add ticket information
 							do_action('qsot-order-item-list-ticket-info', $item_id, $item, $order);
 
 							$item_meta->display();
@@ -79,7 +79,8 @@ $order = new WC_Order( $order_id );
 				</tr>
 				<?php
 
-				if ( in_array( $order->status, array( 'processing', 'completed' ) ) && ( $purchase_note = get_post_meta( $_product->id, '_purchase_note', true ) ) ) {
+				$status = is_callable(array(&$order, 'get_status')) ? $order->get_status() : $order->status;
+				if ( in_array( $status, array( 'processing', 'completed' ) ) && ( $purchase_note = get_post_meta( $_product->id, '_purchase_note', true ) ) ) {
 					?>
 					<tr class="product-purchase-note">
 						<td colspan="3"><?php echo apply_filters( 'the_content', $purchase_note ); ?></td>
