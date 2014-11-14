@@ -3,7 +3,7 @@
  * Plugin Name: OpenTickets Community Edition
  * Plugin URI:  http://opentickets.com/
  * Description: Event Management and Online Ticket Sales Platform
- * Version:     1.8.1
+ * Version:     1.8.2
  * Author:      Quadshot Software LLC
  * Author URI:  http://quadshot.com/
  * Copyright:   Copyright (C) 2009-2014 Quadshot Software LLC
@@ -40,7 +40,7 @@ class opentickets_community_launcher {
 			'pre' => 'qsot-',
 			'fctm' => 'fc',
 			'always_reserve' => 0,
-			'version' => '1.8.1',
+			'version' => '1.8.2',
 			'min_wc_version' => '2.1.0',
 			'core_post_type' => 'qsot-event',
 			'core_post_rewrite_slug' => 'event',
@@ -102,18 +102,18 @@ class opentickets_community_launcher {
 		?>
 			<div class="error errors">
 				<p class="error">
-					<u><strong>Required Plugin Not Up-to-date</strong></u><br/>
-					The
-					<em><a href="<?php echo esc_attr(self::$o->product_url) ?>" target="_blank"><?php echo force_balance_tags(self::$o->product_name) ?></a></em>
-					plugin <strong>requires</strong> that
-					<em><a href="http://www.woothemes.com/woocommerce/" target="_blank">WooCommerce</a></em>
-					be at least at version <u><strong><?php echo self::$o->min_wc_version ?></strong></u>;
-					you are currently running version <em><?php echo get_option('woocommerce_version', '0.0.0') ?></em>.
-					Because of this, the
-					<em><a href="<?php echo esc_attr(self::$o->product_url) ?>" target="_blank"><?php echo force_balance_tags(self::$o->product_name) ?></a></em>
-					plugin has not initialized any of its functionality.
-					To enable the features of this plugin, simply install and activate the latest version of
-					<em><a href="http://www.woothemes.com/woocommerce/" target="_blank">WooCommerce</a></em>.
+					<u><strong><?php _e('Required Plugin Not Up-to-date','opentickets-community-edition') ?></strong></u><br/>
+					<?php 
+						printf(
+							__('The <em><a href="%s" target="_blank">%s</a></em> plugin <strong>requires</strong> that <em><a href="http://www.woothemes.com/woocommerce/" target="_blank">WooCommerce</a></em> be at least at version <u><strong>%s</strong></u>; you are currently running version <em>%s</em>. Because of this, the <em><a href="%s" target="_blank">%s</a></em> plugin has not initialized any of its functionality. To enable the features of this plugin, simply install and activate the latest version of <em><a href="http://www.woothemes.com/woocommerce/" target="_blank">WooCommerce</a></em>.','opentickets-community-edition'),
+							esc_attr(self::$o->product_url),
+							force_balance_tags(self::$o->product_name),
+							self::$o->min_wc_version,
+							get_option('woocommerce_version', '0.0.0'),
+							esc_attr(self::$o->product_url),
+							force_balance_tags(self::$o->product_name)
+						);
+					?>	
 				</p>
 			</div>
 		<?php
@@ -123,15 +123,14 @@ class opentickets_community_launcher {
 		?>
 			<div class="error errors">
 				<p class="error">
-					<u><strong>Missing Required Plugin</strong></u><br/>
-					The
-					<em><a href="<?php echo esc_attr(self::$o->product_url) ?>" target="_blank"><?php echo force_balance_tags(self::$o->product_name) ?></a></em>
-					plugin <strong>requires</strong> that
-					<em><a href="http://www.woothemes.com/woocommerce/" target="_blank">WooCommerce</a></em>
-					be activated in order to perform most vital functions;
-					therefore, the plugin has not initialized any of its functionality.
-					To enable the features of this plugin, simply install and activate
-					<em><a href="http://www.woothemes.com/woocommerce/" target="_blank">WooCommerce</a></em>.
+					<u><strong><?php _e('Missing Required Plugin','opentickets-community-edition') ?></strong></u><br/>
+					<?php 
+						printf(
+							__('The <em><a href="%s" target="_blank">%s</a></em> plugin <strong>requires</strong> that <em><a href="http://www.woothemes.com/woocommerce/" target="_blank">WooCommerce</a></em>	be activated in order to perform most vital functions; therefore, the plugin has not initialized any of its functionality. To enable the features of this plugin, simply install and activate <em><a href="http://www.woothemes.com/woocommerce/" target="_blank">WooCommerce</a></em>.','opentickets-community-edition'),
+							esc_attr(self::$o->product_url),
+							force_balance_tags(self::$o->product_name)							
+						);
+					?>
 				</p>
 			</div>
 		<?php
