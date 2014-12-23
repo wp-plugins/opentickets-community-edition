@@ -1,5 +1,5 @@
 var QS = QS || {};
-QS.EventUI = (function($, EventUI_Callbacks, undefined) {
+QS.EventUI = (function($, undefined) {
 	var qt = QS.Tools;
 	function NewEventDateTimeForm() {
 		var t = this;
@@ -143,7 +143,7 @@ QS.EventUI = (function($, EventUI_Callbacks, undefined) {
 				return 1;
 			}
 
-			while (inRange()) {
+			if ( qt.isO( data['repeat-on'] ) && Object.keys( data['repeat-on'] ).length ) while (inRange()) {
 				for (i in data['repeat-on']) {
 					if (nextDay(data['repeat-on'][i]) < 0) continue; // initial run, in case first day is in middle of list. list m,tu,th,sa and first day is th
 					if (!inRange()) break;
@@ -521,15 +521,6 @@ QS.EventUI = (function($, EventUI_Callbacks, undefined) {
 			if (exists.length == 0) $('<input type="hidden" rel="items-removed" name="events-removed" value="1" />').appendTo(this.elements.main);
 		},
 
-		callback: function(name, params) {
-			var params = params || [];
-			var cbs = EventUI.callbacks.get(name);
-			if (cbs instanceof Array) {
-				for (var i=0; i<cbs.length; i++)
-					cbs[i].apply(this, params);
-			}
-		},
-
 		template: function(names) {
 			var template = '';
 
@@ -591,7 +582,10 @@ QS.EventUI = (function($, EventUI_Callbacks, undefined) {
 		addButtons: function(view) {
 			var tm = this.fctm;
 			this.elements.header_center = view.element.closest('.'+tm).find('.'+tm+'-header-center');
-			this.addButton('new_event_btn', 'New Event Date', ['togvis'], {tar:'.option-sub[rel=add]', scope:'.events-ui'});
+			this.addButton('new_event_btn', 'New Event Date', ['togvis'], {tar:'.option-sub[rel=add]', scope:'.events-ui'}).click(function() {
+				var scope = $(this).closest( $(this).attr('scope') ), tar = $( $(this).attr('tar'), scope);
+				console.log('scope', scope.length, 'tar', tar.length, scope, tar);
+			});
 			this.callback('add_buttons');
 		},
 
@@ -655,7 +649,7 @@ QS.EventUI = (function($, EventUI_Callbacks, undefined) {
 
 	$.fn.qsEventUI = function(o) { return this.each(function() { return startEventUI($(this), o); }); };
 
-	EventUI.callbacks = new EventUI_Callbacks();
+	EventUI.callbacks = new QS.CB( EventUI );
 
 	return EventUI;
-})(jQuery, QS.EventUI_Callbacks);
+})(jQuery);
