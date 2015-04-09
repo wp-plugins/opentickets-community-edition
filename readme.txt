@@ -161,8 +161,14 @@ The FAQ's for OpenTickets Community Edition is currently located on [our website
 
 == Changelog ==
 
+= 1.10.6 =
+* added additional template location checks
+* added 'tool' to force db reinit
+* changed child event title date format to WP date setting
+* enhanced db-upgrade process to handle missing tables and to allow 'pre updates' to be run
+
 = 1.10.5 =
-t* fixed QR Code not showing issue (thanks @backbeatjohn)
+* fixed QR Code not showing issue (thanks @backbeatjohn)
 
 = 1.10.4 =
 * tweaked logic to account for GAMP plugin reservations
