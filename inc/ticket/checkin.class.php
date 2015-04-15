@@ -114,6 +114,9 @@ class QSOT_checkin {
 		// determine the quantity of the tickets that were purchased for this item
 		$qty = isset( $item['qty'] ) ? $item['qty'] : 1;
 
+		// is PDF the format we are generating?
+		$is_pdf = isset( $_GET['frmt'] ) && 'pdf' == $_GET['frmt'];
+
 		// if we only have one ticket, then only generate a single QR Code
 		if ( 1 == $qty ) {
 			// aggregate the ticket information to compile into the QR Code
@@ -129,17 +132,28 @@ class QSOT_checkin {
 
 			$url = self::create_checkin_url( $info );
 
-			$data = array( 'd' => $url, 'p' => site_url() );
-			ksort( $data );
-			$data['sig'] = sha1( NONCE_KEY . @json_encode( $data ) . NONCE_SALT );
-			$data = @json_encode( $data );
+			if ( ! $is_pdf ) {
+				$data = array( 'd' => $url, 'p' => site_url() );
+				ksort( $data );
+				$data['sig'] = sha1( NONCE_KEY . @json_encode( $data ) . NONCE_SALT );
+				$data = @json_encode( $data );
 
-			$ticket->qr_code = sprintf(
-				'<img src="%s%s" alt="%s" />',
-				self::$o->core_url.'libs/phpqrcode/index.php?d=',
-				str_replace( array( '+', '=', '/' ), array( '-', '_', '~' ), base64_encode( strrev( $data ) ) ),
-				$ticket->product->get_title().' ('.$ticket->product->get_price().')'
-			);
+				$ticket->qr_code = sprintf(
+					'<img src="%s%s" alt="%s" />',
+					$img_url,
+					//self::$o->core_url.'libs/phpqrcode/index.php?d=',
+					str_replace( array( '+', '=', '/' ), array( '-', '_', '~' ), base64_encode( strrev( $data ) ) ),
+					$ticket->product->get_title().' ('.$ticket->product->get_price().')'
+				);
+			} else {
+				$img_url = self::_qr_img( $url );
+
+				$ticket->qr_code = sprintf(
+					'<img src="%s" alt="%s" />',
+					$img_url,
+					$ticket->product->get_title().' ('.$ticket->product->get_price().')'
+				);
+			}
 		} else if ( $qty > 1 ) {
 			$ticket->qr_code = null;
 			$ticket->qr_codes = array();
@@ -157,22 +171,67 @@ class QSOT_checkin {
 				$info['ticket_num'] = $i;
 				$url = self::create_checkin_url( $info );
 
-				$data = array( 'd' => $url, 'p' => site_url() );
-				ksort( $data );
-				$data['sig'] = sha1( NONCE_KEY . @json_encode( $data ) . NONCE_SALT );
-				$data = @json_encode( $data );
+				if ( ! $is_pdf ) {
+					$data = array( 'd' => $url, 'p' => site_url() );
+					ksort( $data );
+					$data['sig'] = sha1( NONCE_KEY . @json_encode( $data ) . NONCE_SALT );
+					$data = @json_encode( $data );
 
-				$ticket->qr_codes[ $i ] = sprintf(
-					'<img src="%s%s" alt="%s" />',
-					self::$o->core_url.'libs/phpqrcode/index.php?d=',
-					str_replace( array( '+', '=', '/' ), array( '-', '_', '~' ), base64_encode( strrev( $data ) ) ),
-					$ticket->product->get_title().' ('.$ticket->product->get_price().')'
-				);
+					$ticket->qr_codes[ $i ] = sprintf(
+						'<img src="%s%s" alt="%s" />',
+						self::$o->core_url.'libs/phpqrcode/index.php?d=',
+						str_replace( array( '+', '=', '/' ), array( '-', '_', '~' ), base64_encode( strrev( $data ) ) ),
+						$ticket->product->get_title().' ('.$ticket->product->get_price().')'
+					);
+				} else {
+					$img_url = self::_qr_img( $url );
+
+					$ticket->qr_codes[ $i ] = sprintf(
+						'<img src="%s" alt="%s" />',
+						$img_url,
+						$ticket->product->get_title().' ('.$ticket->product->get_price().')'
+					);
+				}
 				if ( null == $ticket->qr_code ) $ticket->qr_code = $ticket->qr_codes[ $i ];
 			}
 		}
 
 		return $ticket;
+	}
+
+	protected static function _qr_img( $data ) {
+		require_once self::$o->core_dir . 'libs/phpqrcode/qrlib.php';
+		require_once self::$o->core_dir . 'libs/phpqrcode/qsot-qrimage.php';
+
+		ob_start();
+
+		// create the encoder
+		$enc = QRencode::factory('L', 3, 1);
+
+		$outfile = false;
+		try {
+			// attempt to encode the data
+			ob_start();
+			$tab = $enc->encode( $data );
+			$err = ob_get_contents();
+			ob_end_clean();
+
+			// log any errors produced
+			if ( $err != '' )
+				QRtools::log( $outfile, $err );
+
+			// calculate the dimensions of the image
+			$maxSize = (int)( QR_PNG_MAXIMUM_SIZE / ( count( $tab ) + 2 * $enc->margin ) );
+
+			// render the image
+			$img_url = QSOT_QRimage::jpg_base64( $tab, min( max( 1, $enc->size ), $maxSize ), $enc->margin, 100 );
+		} catch (Exception $e) {
+			$img_url = 'data:image/jpeg;base64,';
+			// log any exceptions
+			QRtools::log($outfile, $e->getMessage());
+		}
+
+		return $img_url;
 	}
 
 	protected static function _create_checkin_packet($data) {

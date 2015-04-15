@@ -362,13 +362,14 @@ class QSOT_tickets {
 		$url = trailingslashit($u['baseurl']).'tcpdf-cache/';
 
 		if (!file_exists($pth) && !mkdir($pth)) return;
+		ini_set( 'max_execution_time', 180 );
 
 		require_once self::$o->core_dir.'libs/dompdf/dompdf_config.inc.php';
 
 		$pdf = new DOMPDF();
 		$pdf->load_html($html);
 		$pdf->render();
-		$pdf->stream( sanitize_title_with_dashes( 'ticket-' . $title ) . '.pdf', array( 'Attachment' => 0 ) );
+		$pdf->stream( sanitize_title_with_dashes( 'ticket-' . $title ) . '.pdf', array( 'Attachment' => 1 ) );
 	}
 
 	protected static function _can_user_view_ticket($args) {
