@@ -3,7 +3,7 @@ Contributors: quadshot, loushou, coolmann
 Donate link: http://opentickets.com/
 Tags: events, event management, tickets, ticket sales, ecommerce
 Requires at least: 3.6.1
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: trunk
 Copyright: Copyright (C) 2009-2014 Quadshot Software LLC
 License: GNU General Public License, version 3 (GPL-3.0)
@@ -160,6 +160,11 @@ Setup an 'Event':
 The FAQ's for OpenTickets Community Edition is currently located on [our website's FAQs Page](http://opentickets.com/faq).
 
 == Changelog ==
+
+= 1.10.13 =
+* added ability for PO file to control date formats in datepickers
+* added core en_US PO
+* updated italian PO
 
 = 1.10.12 =
 * added js polyfill for hide-if-js-less themes
