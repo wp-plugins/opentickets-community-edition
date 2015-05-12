@@ -69,6 +69,10 @@ class QSOT {
 
 		// polyfill the hide/show js functions in the head tag, since some themes apparently don't have this
 		add_action( 'wp_head', array( __CLASS__, 'polyfill_hideshow_js' ), 0 );
+
+		// check the current version, and update the db value of that version number if it is not correct, but only on admin pages
+		if ( is_admin() )
+			add_action( 'plugins_loaded', array( __CLASS__, 'check_version' ), 0 );
 		
 		load_plugin_textdomain( 'opentickets-community-edition', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
 	}
@@ -529,16 +533,26 @@ class QSOT {
 		}
 	}
 
-	// do magic - as yet to be determined the need of
+	// update the recorded version, so that other plugins do not have to do fancy lookups to find it
+	public static function check_version() {
+		$version = get_option( 'opentickets_community_edition_version', '' );
+		if ( $version !== self::$o->version )
+			update_option( 'opentickets_community_edition_version', self::$o->version );
+	}
+
+	// do magic 
 	public static function activation() {
 		self::load_plugins_and_modules();
+
 		do_action('qsot-activate');
 		flush_rewrite_rules();
+
 		ob_start();
 		self::compile_frontend_styles();
 		$out = ob_get_contents();
 		ob_end_clean();
-		file_put_contents( 'compile.log', $out );
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG )
+			file_put_contents( 'compile.log', $out );
 	}
 }
 
