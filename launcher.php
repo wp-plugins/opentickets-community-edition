@@ -3,7 +3,7 @@
  * Plugin Name: OpenTickets Community Edition
  * Plugin URI:  http://opentickets.com/
  * Description: Event Management and Online Ticket Sales Platform
- * Version:     1.10.14
+ * Version:     1.10.15
  * Author:      Quadshot Software LLC
  * Author URI:  http://quadshot.com/
  * Copyright:   Copyright (C) 2009-2014 Quadshot Software LLC
@@ -41,7 +41,7 @@ class opentickets_community_launcher {
 			'pre' => 'qsot-',
 			'fctm' => 'fc',
 			'always_reserve' => 0,
-			'version' => '1.10.14',
+			'version' => '1.10.15',
 			'min_wc_version' => '2.2.0',
 			'core_post_type' => 'qsot-event',
 			'core_post_rewrite_slug' => 'event',
@@ -53,6 +53,10 @@ class opentickets_community_launcher {
 			'wc_version' => get_option('woocommerce_version', '0.0.0'),
 			'wp_version' => $GLOBALS['wp_version'],
 		));
+
+		// check the current version, and update the db value of that version number if it is not correct, but only on admin pages
+		if ( is_admin() )
+			self::_check_version();
 
 		// require woocommerce
 		if (self::_is_woocommerce_active()) {
@@ -145,6 +149,13 @@ class opentickets_community_launcher {
 			}
 		}
 		return $headers;
+	}
+
+	// update the recorded version, so that other plugins do not have to do fancy lookups to find it
+	protected static function _check_version() {
+		$version = get_option( 'opentickets_community_edition_version', '' );
+		if ( $version !== self::$o->version )
+			update_option( 'opentickets_community_edition_version', self::$o->version );
 	}
 
 	//run out activation code upon woocommerce activation, if woocommerce is activated AFTER OpenTickets
