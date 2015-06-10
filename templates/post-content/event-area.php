@@ -1,3 +1,4 @@
+<div class="qsfix"></div>
 <div class="qsot-event-area-ticket-selection">
 	<?php do_action('qsot-before-ticket-selection-form', $event, $area, $reserved); ?>
 
@@ -134,3 +135,4 @@
 		})(jQuery);
 	</script>
 </div>
+<div class="qsfix"></div>
