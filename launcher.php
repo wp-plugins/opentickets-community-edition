@@ -3,7 +3,7 @@
  * Plugin Name: OpenTickets Community Edition
  * Plugin URI:  http://opentickets.com/
  * Description: Event Management and Online Ticket Sales Platform
- * Version:     1.11.1
+ * Version:     1.11.2
  * Author:      Quadshot Software LLC
  * Author URI:  http://quadshot.com/
  * Copyright:   Copyright (C) 2009-2014 Quadshot Software LLC
@@ -22,7 +22,7 @@ class opentickets_community_launcher {
 		// load the db upgrader, so that all plugins can interface with it before it does it's magic
 		require_once 'inc/sys/db-upgrade.php';
 		// load the internal core settings sub plugin early, since it controls all the plugin settings, and the object extender, cause it is important
-		require_once 'inc/sys/obj.php';
+		require_once 'inc/sys/utils.php';
 		require_once 'inc/sys/settings.php';
 		require_once 'inc/sys/options.php';
 		require_once 'inc/sys/templates.php';
@@ -42,7 +42,7 @@ class opentickets_community_launcher {
 			'pre' => 'qsot-',
 			'fctm' => 'fc',
 			'always_reserve' => 0,
-			'version' => '1.11.1',
+			'version' => '1.11.2',
 			'min_wc_version' => '2.2.0',
 			'core_post_type' => 'qsot-event',
 			'core_post_rewrite_slug' => 'event',

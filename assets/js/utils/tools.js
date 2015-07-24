@@ -229,11 +229,12 @@ QS.popMediaBox = (function($, qt) {
 					role = me.attr( 'role' ) || 'standard',
 					mode = me.data( 'mode' ) || 'normal',
 					mode = mode.split( /\s*:\s*/ ),
-					d = new Date( me.val() ),
+					initial_date = me.data( 'init-date' ) || ( new Date() ).toString(),
+					d = new Date( initial_date ),
 					min = me.data( 'min-date' ) || '',
 					max = me.data( 'max-date' ) || '',
 					def = me.data( 'default' ) || '',
-					def = '' === me.val() ? ( qt.is( def ) ? def : d ) : d;
+					def = '' === initial_date ? ( qt.is( def ) ? def : d ) : d;
 
 			// if the selected element is not a hidden element, then make it so
 			if ( 'hidden' !== me.attr( 'type' ).toLowerCase() ) {
@@ -1053,6 +1054,10 @@ QS.EditSetting = (function($, undefined) {
 
 	$.paramStandard = $.param;
 
+	function _enc_special_chars( str ) {
+
+	}
+
 	$.paramAll = function(a, tr, cur, dep) {
 		var dep = dep || 0;
 		var cur = cur || '';
@@ -1073,8 +1078,8 @@ QS.EditSetting = (function($, undefined) {
 			}
 			switch (typeof(v)) {
 				case 'number':
-				case 'string': t = t+'='+escape(v); break;
-				case 'boolean': t = t+'='+escape(parseInt(v).toString()); break;
+				case 'string': t = t+'='+encodeURIComponent(v); break;
+				case 'boolean': t = t+'='+parseInt(v).toString(); break;
 				case 'undefined': t = t+'='; break;
 				case 'object': t = $.paramAll(v, tr, t, dep+1); break;
 				default: return; break;
