@@ -16,6 +16,7 @@ class qsot_post_type {
 				'start' => '_start',
 				'end' => '_end',
 				'capacity' => '_capacity',
+				'capacity' => '_capacity',
 			));
 
 			// load all the options, and share them with all other parts of the plugin
@@ -482,7 +483,7 @@ class qsot_post_type {
 			$ppni = $q->query_vars['post_parent__not_in'];
 			if (is_string($ppni)) $ppni = preg_split('#\s*,\s*', $ppni);
 			if (is_array($ppni)) {
-				$where .= $wpdb->prepare(' AND ('.$wpdb->posts.'.post_parent not in ('.implode(',', array_map('absint', $ppni)).') )', true);
+				$where .= ' AND ('.$wpdb->posts.'.post_parent not in ('.implode(',', array_map('absint', $ppni)).') )';
 			}
 		}
 
@@ -490,7 +491,7 @@ class qsot_post_type {
 			$ppi = $q->query_vars['post_parent__in'];
 			if (is_string($ppi)) $ppi = preg_split('#\s*,\s*', $ppi);
 			if (is_array($ppi)) {
-				$where .= $wpdb->prepare(' AND ('.$wpdb->posts.'.post_parent in ('.implode(',', array_map('absint', $ppi)).') )', true);
+				$where .= ' AND ('.$wpdb->posts.'.post_parent in ('.implode(',', array_map('absint', $ppi)).') )';
 			}
 		}
 
@@ -573,7 +574,7 @@ class qsot_post_type {
 
 		// fetch the needed data
 		$capacity = (int)get_post_meta( $event_id, self::$o->{'meta_key.capacity'}, true );
-		$purchases = (int)get_post_meta( $event_id, self::$o->{'meta_key.purchases'}, true );
+		$purchases = (int)get_post_meta( $event_id, self::$o->{'meta_key.ea_purchased'}, true );
 
 		return $capacity - $purchases;
 	}
