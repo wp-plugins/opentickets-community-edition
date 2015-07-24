@@ -154,8 +154,18 @@ class qsot_event_area {
 				'ajaxurl' => admin_url('admin-ajax.php'),
 				'templates' => apply_filters('qsot-event-frontend-templates', array(), $event),
 				'messages' => array(
-					'available' => array('msg' => __('There are currently <span class="available"></span> <span rel="tt"></span> available.','opentickets-community-edition'), 'type' => 'msg'),
-					'more-available' => array('msg' => __('There are currently <span class="available"></span> more <span rel="tt"></span> available.','opentickets-community-edition'), 'type' => 'msg'),
+					'available' => array(
+						'msg' => ( 'yes' == self::$options->{'qsot-show-available-quantity'} )
+								? __( 'There are currently <span class="available"></span> <span rel="tt"></span> available.', 'opentickets-community-edition' )
+								: str_replace( '<span class="available"></span> ', '', __( 'There are currently <span class="available"></span> <span rel="tt"></span> available.', 'opentickets-community-edition' ) ),
+						'type' => 'msg'
+					),
+					'more-available' => array(
+						'msg' => ( 'yes' == self::$options->{'qsot-show-available-quantity'} ) 
+								? __( 'There are currently <span class="available"></span> more <span rel="tt"></span> available.', 'opentickets-community-edition' )
+								: str_replace( '<span class="available"></span> ', '', __( 'There are currently <span class="available"></span> <span rel="tt"></span> available.', 'opentickets-community-edition' ) ),
+						'type' => 'msg'
+					),
 					'not-available' => array('msg' => __('We\'re sorry. There are currently no tickets available.','opentickets-community-edition'), 'type' => 'error'),
 					'sold-out' => array('msg' => __('We are sorry. This event is sold out!','opentickets-community-edition'), 'type' => 'error'),
 					'one-moment' => array('msg' => __('<h1>One Moment Please...</h1>','opentickets-community-edition'), 'type' => 'msg'),
@@ -557,9 +567,27 @@ class qsot_event_area {
 		<?php
 	}
 
-	public static function save_sub_event_settings($settings, $parent_id, $parent) {
-		if (isset($settings['submitted'], $settings['submitted']->event_area)) {
-			$settings['meta'][self::$o->{'meta_key.event_area'}] = $settings['submitted']->event_area;
+	// when saving a sub event, we need to make sure to save what event area it belongs to
+	public static function save_sub_event_settings( $settings, $parent_id, $parent ) {
+		// cache the product price lookup becasue it can get heavy
+		static $ea_price = array();
+
+		// if the ea_id was in the submitted data (from the saving of an edit-event screen in the admin), then
+		if ( isset( $settings['submitted'], $settings['submitted']->event_area ) ) {
+			// add the event_area_id to the meta to save for the individual child event
+			$settings['meta'][ self::$o->{'meta_key.event_area'} ] = $settings['submitted']->event_area;
+
+			// also record the price_option product _price, because it will be used by the display options plugin
+			if ( isset( $ea_price[ $settings['submitted']->event_area ] ) ) {
+				$settings['meta']['_price'] = $ea_price[ $settings['submitted']->event_area ];
+			// if that price has not been cached yet, then look it up
+			} else {
+				$price = 0;
+				$product_id = get_post_meta( $settings['submitted']->event_area, self::$o->{'event_area.mk.po'}, true );
+				if ( $product_id > 0 )
+					$price = get_post_meta( $product_id, '_price', true );
+				$ea_price[ $settings['submitted']->event_area ] = $settings['meta']['_price'] = $price;
+			}
 		}
 
 		return $settings;
