@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenTickets Community Edition v1.10.19\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 15:45-0800\n"
-"PO-Revision-Date: 2015-07-24 15:45-0800\n"
+"POT-Creation-Date: 2015-08-04 05:51-0800\n"
+"PO-Revision-Date: 2015-08-04 05:51-0800\n"
 "Last-Translator: \n"
 "Language-Team: Quadshot <info@quadshot.com>\n"
 "MIME-Version: 1.0\n"
@@ -379,23 +379,23 @@ msgid "Top Level Events"
 msgstr ""
 
 #: ../inc/core/post-type.class.php:599
-#: ../inc/venues/event-area/post-type.class.php:940
 #: ../inc/venues/event-area/post-type.class.php:948
+#: ../inc/venues/event-area/post-type.class.php:956
 msgid "sold-out"
 msgstr ""
 
 #: ../inc/core/post-type.class.php:602
-#: ../inc/venues/event-area/post-type.class.php:949
+#: ../inc/venues/event-area/post-type.class.php:957
 msgid "low"
 msgstr ""
 
 #: ../inc/core/post-type.class.php:605
-#: ../inc/venues/event-area/post-type.class.php:947
+#: ../inc/venues/event-area/post-type.class.php:955
 msgid "medium"
 msgstr ""
 
 #: ../inc/core/post-type.class.php:608
-#: ../inc/venues/event-area/post-type.class.php:946
+#: ../inc/venues/event-area/post-type.class.php:954
 msgid "high"
 msgstr ""
 
@@ -737,7 +737,7 @@ msgstr ""
 # @ woocommerce
 #: ../inc/core/post-type.class.php:1721 ../inc/core/post-type.class.php:1744
 #: ../inc/core/post-type.class.php:1779 ../inc/venues/post-type.class.php:364
-#: ../inc/venues/event-area/post-type.class.php:538
+#: ../inc/venues/event-area/post-type.class.php:546
 #: ../templates/admin/meta-boxes/views/html-order-items.php:217
 #: ../woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-data.php:221
 #: ../woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-data.php:313
@@ -772,7 +772,7 @@ msgstr ""
 # @ opentickets-community-edition
 #: ../inc/core/post-type.class.php:1734 ../inc/core/post-type.class.php:1769
 #: ../inc/core/post-type.class.php:1805 ../inc/venues/post-type.class.php:375
-#: ../inc/venues/event-area/post-type.class.php:561
+#: ../inc/venues/event-area/post-type.class.php:569
 msgid "OK"
 msgstr ""
 
@@ -781,7 +781,7 @@ msgstr ""
 #: ../inc/core/post-type.class.php:1735 ../inc/core/post-type.class.php:1770
 #: ../inc/core/post-type.class.php:1806 ../inc/sys/mba.class.php:462
 #: ../inc/venues/post-type.class.php:376
-#: ../inc/venues/event-area/post-type.class.php:562
+#: ../inc/venues/event-area/post-type.class.php:570
 #: ../templates/admin/meta-boxes/views/html-order-items.php:255
 #: ../templates/admin/meta-boxes/views/html-order-items.php:301
 msgid "Cancel"
@@ -1152,7 +1152,7 @@ msgstr ""
 # @ woocommerce
 #: ../inc/order/admin.class.php:585
 #: ../inc/reporting/seating.report.class.php:508
-#: ../templates/tickets/verification-form.php:10
+#: ../templates/tickets/verification-form.php:11
 #: ../woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-data.php:77
 msgid "Email"
 msgstr ""
@@ -2449,7 +2449,7 @@ msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/ticket/ticket.class.php:109
-#: ../templates/myaccount/my-upcoming-tickets.php:17
+#: ../templates/myaccount/my-upcoming-tickets.php:18
 msgid "View your ticket"
 msgstr ""
 
@@ -2834,7 +2834,7 @@ msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:170
-#: ../templates/post-content/event-area.php:123
+#: ../templates/post-content/event-area.php:128
 msgid "We are sorry. This event is sold out!"
 msgstr ""
 
@@ -2850,13 +2850,13 @@ msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:233
-#: ../templates/post-content/event-area.php:47
+#: ../templates/post-content/event-area.php:52
 msgid "Reserve some tickets:"
 msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:237
-#: ../templates/post-content/event-area.php:68
+#: ../templates/post-content/event-area.php:73
 msgid "Reserve"
 msgstr ""
 
@@ -2867,13 +2867,13 @@ msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:248
-#: ../templates/post-content/event-area.php:86
+#: ../templates/post-content/event-area.php:91
 msgid "You currently have:"
 msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:253
-#: ../templates/post-content/event-area.php:108
+#: ../templates/post-content/event-area.php:113
 msgid "Update"
 msgstr ""
 
@@ -2945,7 +2945,7 @@ msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:372
-#: ../inc/venues/event-area/post-type.class.php:613
+#: ../inc/venues/event-area/post-type.class.php:621
 #: ../inc/venues/event-area/pricing.class.php:680
 msgid "Invalid request. Please refresh the page and try again."
 msgstr ""
@@ -2966,19 +2966,19 @@ msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:403
-#: ../inc/venues/event-area/post-type.class.php:813
+#: ../inc/venues/event-area/post-type.class.php:821
 msgid "The quantity must be greater than zero."
 msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:404
-#: ../inc/venues/event-area/post-type.class.php:486
+#: ../inc/venues/event-area/post-type.class.php:494
 msgid "Could not load that event."
 msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:405
-#: ../inc/venues/event-area/post-type.class.php:487
+#: ../inc/venues/event-area/post-type.class.php:495
 msgid "A problem occurred when loading that event."
 msgstr ""
 
@@ -2989,7 +2989,7 @@ msgstr ""
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:407
-#: ../inc/venues/event-area/post-type.class.php:489
+#: ../inc/venues/event-area/post-type.class.php:497
 msgid "The event does not have any tickets."
 msgstr ""
 
@@ -3003,95 +3003,115 @@ msgstr ""
 msgid "A problem occurred when trying to update your reservations."
 msgstr ""
 
-#: ../inc/venues/event-area/post-type.class.php:479
+#: ../inc/venues/event-area/post-type.class.php:482
 #, php-format
 msgid ""
 "There are not enough available tickets to increase the quantity of %s to %d. "
 "There are only %d available."
 msgstr ""
 
-# @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:488
+#, php-format
+msgid ""
+"There are not enough available tickets to increase the quantity of %s to %d."
+msgstr ""
+
+# @ opentickets-community-edition
+#: ../inc/venues/event-area/post-type.class.php:496
 msgid "That event does not have currently have any tickets."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:536
+#: ../inc/venues/event-area/post-type.class.php:544
 msgid "Event Area:"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:543
+#: ../inc/venues/event-area/post-type.class.php:551
 msgid "-None-"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:626
+#: ../inc/venues/event-area/post-type.class.php:634
 #, php-format
 msgid "Could not find the venue you specified [%s]."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:656
+#: ../inc/venues/event-area/post-type.class.php:664
 msgid "Could not find that venue."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:677
+#: ../inc/venues/event-area/post-type.class.php:685
 msgid "Could not save the item(s) because not enough information was provided."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:703
+#: ../inc/venues/event-area/post-type.class.php:711
 #, php-format
 msgid "There was a problem saving the area [%s]."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:814
+#: ../inc/venues/event-area/post-type.class.php:822
 msgid "Could not find that event."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:815
+#: ../inc/venues/event-area/post-type.class.php:823
 msgid "That is not a valid order."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:928
-#: ../inc/venues/event-area/post-type.class.php:1287
+#: ../inc/venues/event-area/post-type.class.php:936
+#: ../inc/venues/event-area/post-type.class.php:1328
 msgid "Event Areas"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1227
+#: ../inc/venues/event-area/post-type.class.php:1252
 msgid "(Unknown Ticket Type)"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1231
+#: ../inc/venues/event-area/post-type.class.php:1257
 #, php-format
 msgid ""
 "There are only <span class=\"available\">%s</span> %s available currently. "
 "Could not temporarily reserve %d %s."
 msgstr ""
 
+#: ../inc/venues/event-area/post-type.class.php:1264
+#, php-format
+msgid ""
+"There are not enough %s tickets available currently. Could not temporarily "
+"reserve %d %s."
+msgstr ""
+
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1242
-#: ../inc/venues/event-area/post-type.class.php:1276
+#: ../inc/venues/event-area/post-type.class.php:1274
+#: ../inc/venues/event-area/post-type.class.php:1317
 msgid "The number of tickets must be greater than 0."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1263
+#: ../inc/venues/event-area/post-type.class.php:1296
 #, php-format
 msgid ""
 "There are only <span class=\"available\">%s</span> more %s available "
 "currently. Could not temporarily reserve %d more %s. You still have %d %s."
 msgstr ""
 
+#: ../inc/venues/event-area/post-type.class.php:1305
+#, php-format
+msgid ""
+"There are not enough %s tickets available currently. Could not temporarily "
+"reserve %d more %s. You still have %d %s."
+msgstr ""
+
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1288
+#: ../inc/venues/event-area/post-type.class.php:1329
 msgid "Area"
 msgstr ""
 
@@ -3549,59 +3569,59 @@ msgid "Check-In SUCCESSFUL"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:2
+#: ../templates/myaccount/my-upcoming-tickets.php:3
 msgid "Upcoming Tickets"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:19
-#: ../templates/myaccount/my-upcoming-tickets.php:75
+#: ../templates/myaccount/my-upcoming-tickets.php:20
+#: ../templates/myaccount/my-upcoming-tickets.php:76
 msgid "pending payment"
 msgstr ""
 
 # @ default
-#: ../templates/myaccount/my-upcoming-tickets.php:22
+#: ../templates/myaccount/my-upcoming-tickets.php:23
 #, php-format
 msgid "for <a href=\"%s\" title=\"%s\">%s</a>"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:24
-#: ../templates/myaccount/my-upcoming-tickets.php:54
+#: ../templates/myaccount/my-upcoming-tickets.php:25
+#: ../templates/myaccount/my-upcoming-tickets.php:55
 msgid "Visit the Event page"
 msgstr ""
 
 # @ default
-#: ../templates/myaccount/my-upcoming-tickets.php:29
-#: ../templates/myaccount/my-upcoming-tickets.php:82
+#: ../templates/myaccount/my-upcoming-tickets.php:30
+#: ../templates/myaccount/my-upcoming-tickets.php:83
 #, php-format
 msgid "(order <a href=\"%s\" title=\"%s\">#%s<a/>)"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:31
-#: ../templates/myaccount/my-upcoming-tickets.php:84
+#: ../templates/myaccount/my-upcoming-tickets.php:32
+#: ../templates/myaccount/my-upcoming-tickets.php:85
 msgid "Edit order"
 msgstr ""
 
 # @ default
-#: ../templates/myaccount/my-upcoming-tickets.php:52
+#: ../templates/myaccount/my-upcoming-tickets.php:53
 #, php-format
 msgid "<a href=\"%s\" title=\"%s\">%s</a>"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:55
+#: ../templates/myaccount/my-upcoming-tickets.php:56
 msgid "(View Show Page)"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area-closed.php:3
+#: ../templates/post-content/event-area-closed.php:4
 msgid "We are sorry. Online registration for this event has closed."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:9
+#: ../templates/post-content/event-area.php:12
 msgid ""
 "For a better experience, certain features of javascript area required. "
 "Currently you either do not have these features, or you do not have them "
@@ -3610,14 +3630,14 @@ msgid ""
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:12
+#: ../templates/post-content/event-area.php:15
 msgid ""
 "<strong>STEP 1:</strong> Below, enter the number of tickets you wish to "
 "purchase, then click <span class=\"button-name\">Reserve Tickets</span>."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:15
+#: ../templates/post-content/event-area.php:18
 msgid ""
 "<strong>STEP 2:</strong> Finally, once you have successfully Reserved your "
 "Tickets, click <span class=\"button-name\">Proceed to Cart</span> to "
@@ -3628,17 +3648,17 @@ msgstr ""
 "complete your order."
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:34
+#: ../templates/post-content/event-area.php:37
 msgid "Successfully removed your reservations."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:43
+#: ../templates/post-content/event-area.php:48
 msgid "<span class=\"step-name\">STEP 1</span>: How many?"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:50
+#: ../templates/post-content/event-area.php:55
 #, php-format
 msgid ""
 "Currently, there are <span class=\"available\">%s</span> \"<span class="
@@ -3647,12 +3667,12 @@ msgid ""
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:82
+#: ../templates/post-content/event-area.php:87
 msgid "<span class=\"step-name\">STEP 2</span>: Review"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:89
+#: ../templates/post-content/event-area.php:94
 #, php-format
 msgid ""
 "Currently, there are <span class=\"available\">%s</span> more \"<span class="
@@ -3661,7 +3681,7 @@ msgid ""
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:126
+#: ../templates/post-content/event-area.php:131
 msgid ""
 "We are sorry. There are currently no tickets available for this event. Check "
 "back soon!"
@@ -3741,17 +3761,17 @@ msgid "%1$s of %2$s"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/tickets/error-msg.php:8
+#: ../templates/tickets/error-msg.php:9
 msgid "An error has occurred while attempting to view the ticket"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/tickets/verification-form.php:5
+#: ../templates/tickets/verification-form.php:6
 msgid "Additional Information is Required"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/tickets/verification-form.php:7
+#: ../templates/tickets/verification-form.php:8
 msgid ""
 "In order to allow you to view your ticket, we must first verify who you are, "
 "and that you should be able to view this ticket. To do that, we need to "
@@ -3761,14 +3781,14 @@ msgid ""
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/tickets/verification-form.php:13
+#: ../templates/tickets/verification-form.php:14
 msgid ""
 "This should be the email you used during the purchase of your ticket, as "
 "your billing email address."
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/tickets/verification-form.php:17
+#: ../templates/tickets/verification-form.php:18
 msgid "Submit"
 msgstr ""
 

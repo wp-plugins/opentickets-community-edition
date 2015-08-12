@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenTickets Community Edition v1.10.19\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-24 15:46-0800\n"
-"PO-Revision-Date: 2015-07-24 15:47-0800\n"
+"POT-Creation-Date: 2015-08-04 05:53-0800\n"
+"PO-Revision-Date: 2015-08-04 05:55-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -434,26 +434,26 @@ msgid "Top Level Events"
 msgstr "Eventi principali"
 
 #: ../inc/core/post-type.class.php:599
-#: ../inc/venues/event-area/post-type.class.php:940
 #: ../inc/venues/event-area/post-type.class.php:948
+#: ../inc/venues/event-area/post-type.class.php:956
 #, fuzzy
 msgid "sold-out"
 msgstr "Ausverkauft"
 
 #: ../inc/core/post-type.class.php:602
-#: ../inc/venues/event-area/post-type.class.php:949
+#: ../inc/venues/event-area/post-type.class.php:957
 #, fuzzy
 msgid "low"
 msgstr "Niedrig"
 
 #: ../inc/core/post-type.class.php:605
-#: ../inc/venues/event-area/post-type.class.php:947
+#: ../inc/venues/event-area/post-type.class.php:955
 #, fuzzy
 msgid "medium"
 msgstr "Mittel"
 
 #: ../inc/core/post-type.class.php:608
-#: ../inc/venues/event-area/post-type.class.php:946
+#: ../inc/venues/event-area/post-type.class.php:954
 #, fuzzy
 msgid "high"
 msgstr "Hoch"
@@ -832,7 +832,7 @@ msgstr "Stato:"
 # @ woocommerce
 #: ../inc/core/post-type.class.php:1721 ../inc/core/post-type.class.php:1744
 #: ../inc/core/post-type.class.php:1779 ../inc/venues/post-type.class.php:364
-#: ../inc/venues/event-area/post-type.class.php:538
+#: ../inc/venues/event-area/post-type.class.php:546
 #: ../templates/admin/meta-boxes/views/html-order-items.php:217
 #: ../woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-data.php:221
 #: ../woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-data.php:313
@@ -867,7 +867,7 @@ msgstr "Bozza"
 # @ opentickets-community-edition
 #: ../inc/core/post-type.class.php:1734 ../inc/core/post-type.class.php:1769
 #: ../inc/core/post-type.class.php:1805 ../inc/venues/post-type.class.php:375
-#: ../inc/venues/event-area/post-type.class.php:561
+#: ../inc/venues/event-area/post-type.class.php:569
 msgid "OK"
 msgstr "OK"
 
@@ -876,7 +876,7 @@ msgstr "OK"
 #: ../inc/core/post-type.class.php:1735 ../inc/core/post-type.class.php:1770
 #: ../inc/core/post-type.class.php:1806 ../inc/sys/mba.class.php:462
 #: ../inc/venues/post-type.class.php:376
-#: ../inc/venues/event-area/post-type.class.php:562
+#: ../inc/venues/event-area/post-type.class.php:570
 #: ../templates/admin/meta-boxes/views/html-order-items.php:255
 #: ../templates/admin/meta-boxes/views/html-order-items.php:301
 msgid "Cancel"
@@ -1140,8 +1140,9 @@ msgid ""
 msgstr ""
 
 #: ../inc/core/post-type.class.php:1997
+#, fuzzy
 msgid "Availability Quantity"
-msgstr ""
+msgstr "für eine Menge von"
 
 #: ../inc/core/post-type.class.php:1998
 msgid ""
@@ -1317,7 +1318,7 @@ msgstr "Nutzername"
 # @ woocommerce
 #: ../inc/order/admin.class.php:585
 #: ../inc/reporting/seating.report.class.php:508
-#: ../templates/tickets/verification-form.php:10
+#: ../templates/tickets/verification-form.php:11
 #: ../woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-data.php:77
 #, fuzzy
 msgid "Email"
@@ -2941,7 +2942,7 @@ msgstr "Ticket"
 
 # @ opentickets-community-edition
 #: ../inc/ticket/ticket.class.php:109
-#: ../templates/myaccount/my-upcoming-tickets.php:17
+#: ../templates/myaccount/my-upcoming-tickets.php:18
 #, fuzzy
 msgid "View your ticket"
 msgstr "Ihr Ticket ansehen"
@@ -3406,7 +3407,7 @@ msgstr "Es tut uns Leid. Es sind derzeit leider keine Tickets verfügbar."
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:170
-#: ../templates/post-content/event-area.php:123
+#: ../templates/post-content/event-area.php:128
 #, fuzzy
 msgid "We are sorry. This event is sold out!"
 msgstr "Es tut uns Leid. Die Veranstaltung ist ausverkauft!"
@@ -3425,14 +3426,14 @@ msgstr "Schritt 1: Wieviele Tickets?"
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:233
-#: ../templates/post-content/event-area.php:47
+#: ../templates/post-content/event-area.php:52
 #, fuzzy
 msgid "Reserve some tickets:"
 msgstr "Anzahl Tickets:"
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:237
-#: ../templates/post-content/event-area.php:68
+#: ../templates/post-content/event-area.php:73
 #, fuzzy
 msgid "Reserve"
 msgstr "bestellen"
@@ -3445,14 +3446,14 @@ msgstr "Schritt 2: Überprüfung"
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:248
-#: ../templates/post-content/event-area.php:86
+#: ../templates/post-content/event-area.php:91
 #, fuzzy
 msgid "You currently have:"
 msgstr "Sie haben derzeit:"
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:253
-#: ../templates/post-content/event-area.php:108
+#: ../templates/post-content/event-area.php:113
 #, fuzzy
 msgid "Update"
 msgstr "aktualisieren"
@@ -3540,7 +3541,7 @@ msgstr "Diese Veranstaltung ist Passwort geschützt"
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:372
-#: ../inc/venues/event-area/post-type.class.php:613
+#: ../inc/venues/event-area/post-type.class.php:621
 #: ../inc/venues/event-area/pricing.class.php:680
 #, fuzzy
 msgid "Invalid request. Please refresh the page and try again."
@@ -3564,21 +3565,21 @@ msgstr "Konnte Ihre Reservierung nicht aktualisieren."
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:403
-#: ../inc/venues/event-area/post-type.class.php:813
+#: ../inc/venues/event-area/post-type.class.php:821
 #, fuzzy
 msgid "The quantity must be greater than zero."
 msgstr "Die Menge muss größer als Null sein."
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:404
-#: ../inc/venues/event-area/post-type.class.php:486
+#: ../inc/venues/event-area/post-type.class.php:494
 #, fuzzy
 msgid "Could not load that event."
 msgstr "Kann die Veranstaltung nicht laden"
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:405
-#: ../inc/venues/event-area/post-type.class.php:487
+#: ../inc/venues/event-area/post-type.class.php:495
 #, fuzzy
 msgid "A problem occurred when loading that event."
 msgstr "Während des Ladens ist ein Fehler aufgetreten."
@@ -3591,7 +3592,7 @@ msgstr "Diese Veranstaltung verfügt derzeit über keine Tickets."
 
 # @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:407
-#: ../inc/venues/event-area/post-type.class.php:489
+#: ../inc/venues/event-area/post-type.class.php:497
 #, fuzzy
 msgid "The event does not have any tickets."
 msgstr "Die Veranstaltung verfügt über keine Tickets"
@@ -3608,7 +3609,7 @@ msgstr "Während der Stornierung Ihrer Reservierung ist ein Fehler aufgetreten."
 msgid "A problem occurred when trying to update your reservations."
 msgstr "Bei der Aktualisierung Ihrer Reservierung ist ein Fehler aufgetreten."
 
-#: ../inc/venues/event-area/post-type.class.php:479
+#: ../inc/venues/event-area/post-type.class.php:482
 #, fuzzy, php-format
 msgid ""
 "There are not enough available tickets to increase the quantity of %s to %d. "
@@ -3617,38 +3618,46 @@ msgstr ""
 "Er zijn het genoeg tickets beschikbaar op de hoeveilheid te verhogen van %s "
 "naar %d. Er zijn er maar %d beschikbaar."
 
-# @ opentickets-community-edition
 #: ../inc/venues/event-area/post-type.class.php:488
+#, fuzzy, php-format
+msgid ""
+"There are not enough available tickets to increase the quantity of %s to %d."
+msgstr ""
+"Er zijn het genoeg tickets beschikbaar op de hoeveilheid te verhogen van %s "
+"naar %d. Er zijn er maar %d beschikbaar."
+
+# @ opentickets-community-edition
+#: ../inc/venues/event-area/post-type.class.php:496
 #, fuzzy
 msgid "That event does not have currently have any tickets."
 msgstr "Diese Veranstaltung hat derzeit keine Tickets zur Verfügung."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:536
+#: ../inc/venues/event-area/post-type.class.php:544
 #, fuzzy
 msgid "Event Area:"
 msgstr "Veranstaltungsort:"
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:543
+#: ../inc/venues/event-area/post-type.class.php:551
 #, fuzzy
 msgid "-None-"
 msgstr "-Keine-"
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:626
+#: ../inc/venues/event-area/post-type.class.php:634
 #, fuzzy, php-format
 msgid "Could not find the venue you specified [%s]."
 msgstr "Kann den gesuchten Veranstaltungsort nicht finden [%s]."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:656
+#: ../inc/venues/event-area/post-type.class.php:664
 #, fuzzy
 msgid "Could not find that venue."
 msgstr "Kann diesen Veranstaltungsort nicht finden."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:677
+#: ../inc/venues/event-area/post-type.class.php:685
 #, fuzzy
 msgid "Could not save the item(s) because not enough information was provided."
 msgstr ""
@@ -3656,38 +3665,38 @@ msgstr ""
 "werden."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:703
+#: ../inc/venues/event-area/post-type.class.php:711
 #, fuzzy, php-format
 msgid "There was a problem saving the area [%s]."
 msgstr "Es gab ein Problem bei der Speicherung des Bereiches [%s]."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:814
+#: ../inc/venues/event-area/post-type.class.php:822
 #, fuzzy
 msgid "Could not find that event."
 msgstr "Kann diese Veranstaltung nicht finden."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:815
+#: ../inc/venues/event-area/post-type.class.php:823
 #, fuzzy
 msgid "That is not a valid order."
 msgstr "Dies ist keine gültige Bestellung."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:928
-#: ../inc/venues/event-area/post-type.class.php:1287
+#: ../inc/venues/event-area/post-type.class.php:936
+#: ../inc/venues/event-area/post-type.class.php:1328
 #, fuzzy
 msgid "Event Areas"
 msgstr "Veranstaltungsbereiche"
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1227
+#: ../inc/venues/event-area/post-type.class.php:1252
 #, fuzzy
 msgid "(Unknown Ticket Type)"
 msgstr "(Unbekannter Ticket-Typ)"
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1231
+#: ../inc/venues/event-area/post-type.class.php:1257
 #, fuzzy, php-format
 msgid ""
 "There are only <span class=\"available\">%s</span> %s available currently. "
@@ -3697,14 +3706,24 @@ msgstr ""
 "können nicht reserviert werden."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1242
-#: ../inc/venues/event-area/post-type.class.php:1276
+#: ../inc/venues/event-area/post-type.class.php:1264
+#, fuzzy, php-format
+msgid ""
+"There are not enough %s tickets available currently. Could not temporarily "
+"reserve %d %s."
+msgstr ""
+"Es sind nur <span class=\"available\">%s</span> %s derzeit Verfügbar. %d %s "
+"können nicht reserviert werden."
+
+# @ opentickets-community-edition
+#: ../inc/venues/event-area/post-type.class.php:1274
+#: ../inc/venues/event-area/post-type.class.php:1317
 #, fuzzy
 msgid "The number of tickets must be greater than 0."
 msgstr "Die Anzahl der Tickets muss größer 0 sein."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1263
+#: ../inc/venues/event-area/post-type.class.php:1296
 #, fuzzy, php-format
 msgid ""
 "There are only <span class=\"available\">%s</span> more %s available "
@@ -3714,7 +3733,17 @@ msgstr ""
 "Kann derzeit nicht %d zusätzlich %s reservieren. Sie haben %d %s."
 
 # @ opentickets-community-edition
-#: ../inc/venues/event-area/post-type.class.php:1288
+#: ../inc/venues/event-area/post-type.class.php:1305
+#, fuzzy, php-format
+msgid ""
+"There are not enough %s tickets available currently. Could not temporarily "
+"reserve %d more %s. You still have %d %s."
+msgstr ""
+"Es sind nur <span class=\"available\">%s</span> zusätzlich %s Verfügbar. "
+"Kann derzeit nicht %d zusätzlich %s reservieren. Sie haben %d %s."
+
+# @ opentickets-community-edition
+#: ../inc/venues/event-area/post-type.class.php:1329
 #, fuzzy
 msgid "Area"
 msgstr "Bereich"
@@ -4259,59 +4288,59 @@ msgid "Check-In SUCCESSFUL"
 msgstr "Check-in ERFOLGREICH"
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:2
+#: ../templates/myaccount/my-upcoming-tickets.php:3
 #, fuzzy
 msgid "Upcoming Tickets"
 msgstr "Anstehendes Ticket"
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:19
-#: ../templates/myaccount/my-upcoming-tickets.php:75
+#: ../templates/myaccount/my-upcoming-tickets.php:20
+#: ../templates/myaccount/my-upcoming-tickets.php:76
 #, fuzzy
 msgid "pending payment"
 msgstr "Ausstehende Zahlung"
 
 # @ default
-#: ../templates/myaccount/my-upcoming-tickets.php:22
+#: ../templates/myaccount/my-upcoming-tickets.php:23
 #, fuzzy, php-format
 msgid "for <a href=\"%s\" title=\"%s\">%s</a>"
 msgstr "für <a href=\"%s\" title=\"%s\">%s</a>"
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:24
-#: ../templates/myaccount/my-upcoming-tickets.php:54
+#: ../templates/myaccount/my-upcoming-tickets.php:25
+#: ../templates/myaccount/my-upcoming-tickets.php:55
 #, fuzzy
 msgid "Visit the Event page"
 msgstr "Besuchen Sie die Veranstaltungsseite"
 
 # @ default
-#: ../templates/myaccount/my-upcoming-tickets.php:29
-#: ../templates/myaccount/my-upcoming-tickets.php:82
+#: ../templates/myaccount/my-upcoming-tickets.php:30
+#: ../templates/myaccount/my-upcoming-tickets.php:83
 #, fuzzy, php-format
 msgid "(order <a href=\"%s\" title=\"%s\">#%s<a/>)"
 msgstr "(bestelle <a href=\"%s\" title=\"%s\">#%s<a/>)"
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:31
-#: ../templates/myaccount/my-upcoming-tickets.php:84
+#: ../templates/myaccount/my-upcoming-tickets.php:32
+#: ../templates/myaccount/my-upcoming-tickets.php:85
 #, fuzzy
 msgid "Edit order"
 msgstr "Bestellung ändern"
 
 # @ default
-#: ../templates/myaccount/my-upcoming-tickets.php:52
+#: ../templates/myaccount/my-upcoming-tickets.php:53
 #, fuzzy, php-format
 msgid "<a href=\"%s\" title=\"%s\">%s</a>"
 msgstr "<a href=\"%s\" title=\"%s\">%s</a>"
 
 # @ opentickets-community-edition
-#: ../templates/myaccount/my-upcoming-tickets.php:55
+#: ../templates/myaccount/my-upcoming-tickets.php:56
 #, fuzzy
 msgid "(View Show Page)"
 msgstr "(Showseite ansehen)"
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area-closed.php:3
+#: ../templates/post-content/event-area-closed.php:4
 #, fuzzy
 msgid "We are sorry. Online registration for this event has closed."
 msgstr ""
@@ -4319,7 +4348,7 @@ msgstr ""
 "mehr möglich."
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:9
+#: ../templates/post-content/event-area.php:12
 #, fuzzy
 msgid ""
 "For a better experience, certain features of javascript area required. "
@@ -4333,7 +4362,7 @@ msgstr ""
 "notwendig."
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:12
+#: ../templates/post-content/event-area.php:15
 #, fuzzy
 msgid ""
 "<strong>STEP 1:</strong> Below, enter the number of tickets you wish to "
@@ -4344,7 +4373,7 @@ msgstr ""
 "\">Reserviere Tickets</span>."
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:15
+#: ../templates/post-content/event-area.php:18
 #, fuzzy
 msgid ""
 "<strong>STEP 2:</strong> Finally, once you have successfully Reserved your "
@@ -4355,19 +4384,19 @@ msgstr ""
 "bitte auf <span class=\"button-name\">zum Warenkorb</span> klicken."
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:34
+#: ../templates/post-content/event-area.php:37
 #, fuzzy
 msgid "Successfully removed your reservations."
 msgstr "Die Reservierung wurde storniert."
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:43
+#: ../templates/post-content/event-area.php:48
 #, fuzzy
 msgid "<span class=\"step-name\">STEP 1</span>: How many?"
 msgstr "<span class=\"step-name\">Schritt 1</span>: Wie viele?"
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:50
+#: ../templates/post-content/event-area.php:55
 #, fuzzy, php-format
 msgid ""
 "Currently, there are <span class=\"available\">%s</span> \"<span class="
@@ -4379,13 +4408,13 @@ msgstr ""
 "verfügbar."
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:82
+#: ../templates/post-content/event-area.php:87
 #, fuzzy
 msgid "<span class=\"step-name\">STEP 2</span>: Review"
 msgstr "<span class=\"step-name\">Schritt 2</span>: Überprüfung"
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:89
+#: ../templates/post-content/event-area.php:94
 #, fuzzy, php-format
 msgid ""
 "Currently, there are <span class=\"available\">%s</span> more \"<span class="
@@ -4397,7 +4426,7 @@ msgstr ""
 "Verkauf verfügbar."
 
 # @ opentickets-community-edition
-#: ../templates/post-content/event-area.php:126
+#: ../templates/post-content/event-area.php:131
 #, fuzzy
 msgid ""
 "We are sorry. There are currently no tickets available for this event. Check "
@@ -4493,19 +4522,19 @@ msgid "%1$s of %2$s"
 msgstr ""
 
 # @ opentickets-community-edition
-#: ../templates/tickets/error-msg.php:8
+#: ../templates/tickets/error-msg.php:9
 #, fuzzy
 msgid "An error has occurred while attempting to view the ticket"
 msgstr "Bei der Anzeige des Tickets ist ein Fehler aufgetreten"
 
 # @ opentickets-community-edition
-#: ../templates/tickets/verification-form.php:5
+#: ../templates/tickets/verification-form.php:6
 #, fuzzy
 msgid "Additional Information is Required"
 msgstr "Es werden zusätzliche Informationen benötigt"
 
 # @ opentickets-community-edition
-#: ../templates/tickets/verification-form.php:7
+#: ../templates/tickets/verification-form.php:8
 #, fuzzy
 msgid ""
 "In order to allow you to view your ticket, we must first verify who you are, "
@@ -4519,7 +4548,7 @@ msgstr ""
 "von Ihnen abgefragt. Danach können Sie über Ihr Ticket verfügen."
 
 # @ opentickets-community-edition
-#: ../templates/tickets/verification-form.php:13
+#: ../templates/tickets/verification-form.php:14
 #, fuzzy
 msgid ""
 "This should be the email you used during the purchase of your ticket, as "
@@ -4529,7 +4558,7 @@ msgstr ""
 "die Rechnung angegeben."
 
 # @ opentickets-community-edition
-#: ../templates/tickets/verification-form.php:17
+#: ../templates/tickets/verification-form.php:18
 #, fuzzy
 msgid "Submit"
 msgstr "Bestätigen"
