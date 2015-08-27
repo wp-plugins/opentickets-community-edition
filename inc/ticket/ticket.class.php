@@ -322,7 +322,10 @@ class QSOT_tickets {
 		// determine the file location for the template and it's stylesheet
 		$template = apply_filters( 'qsot-locate-template', '', array( 'tickets/basic-ticket.php' ), false, false );
 		$stylesheet = apply_filters( 'qsot-locate-template', '', array( 'tickets/basic-style.css' ), false, false );
-		$stylesheet = str_replace( DIRECTORY_SEPARATOR, '/', str_replace( ABSPATH, '/', $stylesheet ) );
+		// account for messed up Windows paths
+		$stylesheet = str_replace( DIRECTORY_SEPARATOR, '/', $stylesheet );
+		$abspath = str_replace( DIRECTORY_SEPARATOR, '/', ABSPATH );
+		$stylesheet = str_replace( $abspath, '/', $stylesheet );
 		$stylesheet = site_url( $stylesheet );
 
 		// load the branding image ids from our settings page

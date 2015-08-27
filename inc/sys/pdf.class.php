@@ -16,6 +16,7 @@ class QSOT_pdf {
 	public static function from_html( $html, $title ) {
 		// give us soem breathing room
 		ini_set( 'max_execution_time', 180 );
+		//$ohtml = $html;
 
 		// pre-parse remote or url based assets
 		try {
@@ -28,7 +29,7 @@ class QSOT_pdf {
 		}
 
 		// if we are debugging the pdf, then depending on the mode, dump the html contents onw
-		if ( QSOT_DEBUG_PDF & 2 ) {
+		if ( ( QSOT_DEBUG_PDF & 2 ) ) { // || ( current_user_can( 'edit_posts' ) && isset( $_GET['as'] ) && 'html' == $_GET['as'] ) ) {
 			echo '<pre>';
 			echo htmlspecialchars( $html );
 			echo '</pre>';
@@ -386,6 +387,12 @@ class QSOT_cache_helper {
 
 		// if the scheme is present, and set to 'file' then it is definitely supposed to be a local asset
 		if ( isset( $parsed_url['scheme'] ) && 'file' === strtolower( $parsed_url['scheme'] ) )
+			return true;
+
+		// on windows servers d:/path/to/file gets registerd as a url with scheme d and path /path/to/file. we need to compensate for this
+		// do this by a regex test to see if the path starts with the path to the installation
+		$test_path = preg_replace( '#^' . preg_quote( ABSPATH, '#' ) . '#', '', $url );
+		if ( $test_path != $url )
 			return true;
 
 		// figure out the host and path of both urls. this will help determine if this asset lives at a local path. the site_url() could be a host with a path, if the installation is in a subdir
