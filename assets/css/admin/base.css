@@ -7,6 +7,16 @@ body div.opentickets-error a:hover { color:#DD9990; }
 .activation-nag { color:#880000; font-weight:bold; }
 .activation-nag-mb { padding:6px 8px; }
 
+.otce-rating-link { color:#d96b00; }
+.otce-brand-link,
+.otce-author-link { font-style:italic; font-weight:700; }
+#adminmenu .wp-submenu a.otce-external-link { color:#d96b00; }
+#adminmenu .wp-submenu li.otce-external-link .dashicons-external { font-size:16px; vertical-align:text-top; }
+#adminmenu .wp-submenu li:hover a.otce-external-link,
+#adminmenu .wp-submenu a.otce-external-link:hover { color:#00b9eb; }
+
+.clrpick { box-sizing: border-box; font-family: monospace; margin: 0; width: 100%; }
+
 #adminmenu #toplevel_page_opentickets .wp-menu-image,
 #adminmenu #menu-posts-qsot-event .wp-menu-image,
 #adminmenu #menu-posts-qsot-seating-chart .wp-menu-image,
